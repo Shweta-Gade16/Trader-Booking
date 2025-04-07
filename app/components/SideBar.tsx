@@ -16,7 +16,7 @@ const navItems: NavItem[] = [
   {
     label: 'Dashboard',
     icon: '/bar-chart-square-02.png',
-    hoverIcon: '/dashboard_p.png',
+    hoverIcon: '/Dashboard_p.png',
     href: '/dashboard',
   },
   {

@@ -27,7 +27,7 @@ const navItems: NavItem[] = [
   },
   {
     label: 'Bookings',
-    icon: '/booking.png',
+    icon: '/Booking.png',
     hoverIcon: '/Booking_p.png',
     href: '/booking',
 

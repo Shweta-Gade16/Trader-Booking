@@ -30,7 +30,6 @@ const navItems: NavItem[] = [
     icon: '/Booking.png',
     hoverIcon: '/Booking_p.png',
     href: '/booking',
-
   },
   {
     label: 'Reviews',
@@ -43,9 +42,9 @@ const navItems: NavItem[] = [
 const SidebarItem = ({ label, icon, hoverIcon, href }: NavItem) => (
   <Link
     href={href}
-    className="w-full h-[40px] flex items-center gap-[5px] rounded px-2 group hover:bg-[#9B59B61A] transition cursor-pointer justify-center md:justify-start"
+    className="w-full h-[40px] flex items-center gap-2 rounded px-2 group hover:bg-[#9B59B61A] transition cursor-pointer justify-center md:justify-start"
   >
-    <div className="w-[40px] h-[40px] p-[8px] rounded-[4px] flex items-center justify-center relative">
+    <div className="w-[40px] h-[40px] p-2 rounded flex items-center justify-center relative">
       <Image
         src={icon}
         alt={`${label} icon`}
@@ -61,7 +60,7 @@ const SidebarItem = ({ label, icon, hoverIcon, href }: NavItem) => (
         className="opacity-0 group-hover:opacity-100 transition-opacity"
       />
     </div>
-    <span className="hidden md:block w-[140px] h-[20px] font-normal text-[14px] leading-[20px] text-[#324A6D] group-hover:text-[#9B59B6] font-poppins">
+    <span className="hidden md:block text-[14px] font-poppins text-[#324A6D] group-hover:text-[#9B59B6]">
       {label}
     </span>
   </Link>
@@ -69,52 +68,50 @@ const SidebarItem = ({ label, icon, hoverIcon, href }: NavItem) => (
 
 const Sidebar = () => {
   return (
-    <aside className="w-[72px] md:w-[280px] min-h-screen bg-white  overflow-hidden flex flex-col gap-[12px] transition-all">
-
-      <div className="pt-[12px] flex flex-col gap-[12px]">
-        <div className="w-full h-[40px] px-[16px] flex items-center justify-center md:justify-start gap-[8px]">
-
-          <div className="w-[40px] h-[40px] relative md:hidden">
+    <aside className="w-[72px] md:w-[280px] min-h-screen bg-white flex flex-col justify-between transition-all duration-300 ease-in-out">
+      <div className="pt-3 flex flex-col gap-3">
+        <div className="w-full h-[40px] px-4 flex items-center justify-center md:justify-start gap-2">
+          <div className="w-10 h-10 relative md:hidden">
             <Image src="/logo.png" alt="Logo" fill className="object-contain" priority />
           </div>
-
           <div className="w-[103px] h-[26px] relative hidden md:block">
-            <Image src="/image 6.png" alt="Logo" fill className="object-contain" priority />
+            <Image src="/image 6.png" alt="Full Logo" fill className="object-contain" priority />
           </div>
         </div>
-
-        <nav className="px-[8px] md:px-[16px] flex flex-col gap-[6px]">
+        <nav className="px-2 md:px-4 flex flex-col gap-2">
           {navItems.map((item, index) => (
             <SidebarItem key={index} {...item} />
           ))}
         </nav>
       </div>
 
-      <div className="mt-auto px-[8px] md:px-[16px] pb-[42px] flex flex-col gap-[16px]">
+      <div className="px-2 md:px-4 pb-10 flex flex-col gap-4">
         <Link
           href="/messages"
-          className="flex items-center gap-[8px] group hover:bg-[#9B59B61A] p-2 rounded justify-center md:justify-start"
+          className="flex items-center gap-2 group hover:bg-[#9B59B61A] p-2 rounded justify-center md:justify-start"
         >
           <LuMessageSquareText className="text-[#8492A7] group-hover:text-[#9B59B6]" size={24} />
           <span className="hidden md:block text-[14px] text-[#324A6D] group-hover:text-[#9B59B6] font-poppins">
             Messages
           </span>
         </Link>
+
         <Link
           href="/notifications"
-          className="flex items-center gap-[8px] group hover:bg-[#9B59B61A] p-2 rounded justify-center md:justify-start"
+          className="flex items-center gap-2 group hover:bg-[#9B59B61A] p-2 rounded justify-center md:justify-start"
         >
           <FiBell className="text-[#8492A7] group-hover:text-[#9B59B6]" size={24} />
           <span className="hidden md:block text-[14px] text-[#324A6D] group-hover:text-[#9B59B6] font-poppins">
             Notifications
           </span>
         </Link>
+
         <Link
           href="/logout"
-          className="flex items-center gap-[8px] group hover:bg-[#9B59B61A] p-2 rounded justify-center md:justify-start"
+          className="flex items-center gap-2 group hover:bg-[#9B59B61A] p-2 rounded justify-center md:justify-start"
         >
           <FiLogOut className="text-[#8492A7] group-hover:text-[#EF4444]" size={24} />
-          <span className="hidden md:block text-[14px] text-[#324A6D] group-hover:text-[#9B59B6] font-poppins">
+          <span className="hidden md:block text-[14px] text-[#324A6D] group-hover:text-[#EF4444] font-poppins">
             Logout
           </span>
         </Link>

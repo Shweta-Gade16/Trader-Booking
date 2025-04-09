@@ -70,7 +70,7 @@ const Sidebar = () => {
   return (
     <aside className="w-[72px] md:w-[280px] min-h-screen bg-white flex flex-col justify-between transition-all duration-300 ease-in-out">
       <div className="pt-3 flex flex-col gap-3">
-        <div className="w-full h-[40px] px-4 flex items-center justify-center md:justify-start gap-2">
+        <div className="w-full h-[48px] px-8 flex items-center justify-center md:justify-start gap-2">
           <div className="w-10 h-10 relative md:hidden">
             <Image src="/logo.png" alt="Logo" fill className="object-contain" priority />
           </div>

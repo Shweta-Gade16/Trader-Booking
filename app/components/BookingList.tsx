@@ -7,7 +7,7 @@ import StatusBadge from './SessionStatus';
 import { HiDotsVertical } from 'react-icons/hi';
 import PaginationFooter from './Pagination';
 import { useState } from 'react';
-
+import Link from 'next/link';
 export interface BookingType {
   id: string;
   session: string;
@@ -67,6 +67,7 @@ export default function BookingList({ bookings }: BookingListProps) {
           </thead>
           <tbody>
             {currentBookings.map((booking) => (
+             
               <tr
                 key={`${booking.id}-${booking.date}`}
                 className="border-t border-[#324A6D1A] hover:bg-[#f9f9f9] transition"
@@ -82,9 +83,10 @@ export default function BookingList({ bookings }: BookingListProps) {
                         className="rounded-full"
                       />
                     </div>
-                    <span className="font-poppins text-[14px] font-semibold text-[#324A6D] truncate">
+                    <Link href={`/booking-detail/${booking.id}`} className="font-poppins text-[14px] font-semibold text-[#324A6D] truncate">
                       {booking.mentor}
-                    </span>
+                    </Link>
+
                   </div>
                 </td>
                 <td className="px-4 sm:px-6 py-4 text-[12px] text-[#324A6D] font-normal">{booking.session}</td>
@@ -99,7 +101,7 @@ export default function BookingList({ bookings }: BookingListProps) {
                     <HiDotsVertical size={20} className="text-[#667085]" />
                   </button>
                 </td>
-              </tr>
+              </tr>            
             ))}
           </tbody>
         </table>

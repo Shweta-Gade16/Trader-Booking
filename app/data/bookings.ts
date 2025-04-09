@@ -1,3 +1,4 @@
+
 export const dummyBookings = [
     {
       id: '1',
@@ -5,7 +6,7 @@ export const dummyBookings = [
       mentor: 'Ethan P.',
       date: 'March 15, 2025',
       time: '5:00 PM',
-      duration: 1,
+      duration: '30 ' ,
       status: 'pending',
       mentorImage: '/Avatar.png',
 
@@ -16,7 +17,7 @@ export const dummyBookings = [
       mentor: 'Sophia T.',
       date: 'March 10, 2025',
       time: '03:00 PM',
-      duration: 2,
+      duration: '30 ' ,
       status: 'scheduled',
       mentorImage: '/Avatar (1).png',
 
@@ -27,7 +28,7 @@ export const dummyBookings = [
       mentor: 'Noah S.',
       date: 'March 10, 2025',
       time: '4:00 PM',
-      duration: 1,
+      duration: '30 ' ,
       status: 'completed',
       mentorImage: '/Avatar (2).png',
 
@@ -38,7 +39,7 @@ export const dummyBookings = [
         mentor: 'Olivia J.',
         date: 'March 10, 2025',
         time: '3:00 PM',
-        duration: 1,
+        duration: '70 ' ,
         status: 'scheduled',
         mentorImage: '/Avatar (3).png',
   
@@ -49,7 +50,7 @@ export const dummyBookings = [
         mentor: 'Mason B.',
         date: 'March 10, 2025',
         time: '3:00 PM',
-        duration: 1,
+        duration: '30 ' ,
         status: 'cancelled',
         mentorImage: '/Avatar (4).png',
   
@@ -60,7 +61,7 @@ export const dummyBookings = [
         mentor: 'Ava D.',
         date: 'March 10, 2025',
         time: '3:00 PM',
-        duration: 1,
+        duration: '30 ' ,
         status: 'scheduled',
         mentorImage: '/Avatar (5).png',
   
@@ -71,7 +72,7 @@ export const dummyBookings = [
         mentor: 'Lucas W.',
         date: 'March 10, 2025',
         time: '3:00 PM',
-        duration: 1,
+        duration: '30 ' ,
         status: 'pending',
         mentorImage: '/Avatar (6).png',
   
@@ -82,7 +83,7 @@ export const dummyBookings = [
         mentor: 'Lucas W.',
         date: 'March 10, 2025',
         time: '3:00 PM',
-        duration: 1,
+        duration: '30 ' ,
         status: 'pending',
         mentorImage: '/Avatar (6).png',
   

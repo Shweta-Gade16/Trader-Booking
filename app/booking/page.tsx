@@ -15,8 +15,11 @@ export default function BookingPage() {
 
   const totalBookings = bookings.length;
   const completedSessions = bookings.filter((b) => b.status === 'completed').length;
-  const totalHours = bookings.reduce((acc, b) => acc + b.duration, 0);
-
+  const totalMinutes = dummyBookings.reduce((total, booking) => {
+    return total + parseInt(booking.duration, 10); 
+  }, 0);
+ const totalHours = `${Math.floor(totalMinutes / 60)} hr ${totalMinutes % 60} mins`;
+  
   return (
     <div className="flex flex-row min-h-screen w-full overflow-hidden">
       <Sidebar />
@@ -40,7 +43,7 @@ export default function BookingPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6 w-full">
           <Count label="Total Bookings" value={totalBookings} />
           <Count label="Completed Sessions" value={completedSessions} />
-          <Count label="Learning Hours" value={`${totalHours} hrs`} />
+          <Count label="Learning Hours" value={`${totalHours} `} />
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-3 sm:gap-6 w-full">

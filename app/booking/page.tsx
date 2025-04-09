@@ -9,8 +9,8 @@ import BookingList, { BookingType } from '@/app/components/BookingList';
 import Button from '../components/Buttons';
 
 export default function BookingPage() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [sort] = useState<'date' | 'status'>('date');
+  
+  const [] = useState<'date' | 'status'>('date');
   const bookings: BookingType[] = dummyBookings as unknown as BookingType[];
 
   const totalBookings = bookings.length;
@@ -19,7 +19,6 @@ export default function BookingPage() {
     return total + parseInt(booking.duration, 10); 
   }, 0);
  const totalHours = `${Math.floor(totalMinutes / 60)} hr ${totalMinutes % 60} mins`;
-  
   return (
     <div className="flex flex-row min-h-screen w-full overflow-hidden">
       <Sidebar />
@@ -39,7 +38,6 @@ export default function BookingPage() {
           <Button text="Find a Mentor" />
         </div>
         </div>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6 w-full">
           <Count label="Total Bookings" value={totalBookings} />
           <Count label="Completed Sessions" value={completedSessions} />
@@ -56,7 +54,6 @@ export default function BookingPage() {
             <ChevronDown size={16} className="text-[#324A6D]" />
           </div>
         </div>
-
         <div className="w-full overflow-x-auto">
           <BookingList bookings={bookings} />
         </div>

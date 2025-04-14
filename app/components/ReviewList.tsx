@@ -43,7 +43,7 @@ export const ReviewList: React.FC<ReviewListProps> = ({ reviews }) => {
               <th className="px-6 py-4 text-left">Title</th>
               <th className="px-6 py-4 text-left">Description</th>
               <th className="px-6 py-4 text-left">
-                <div className="flex items-center gap-1">
+                <div className="flex items-center flex-nowrap gap-1">
                   Date & Time <LuArrowDown size={16} className="text-[#324A6D]" />
                 </div>
               </th>

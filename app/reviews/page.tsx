@@ -23,10 +23,12 @@ import HeaderText from '../components/HeaderText';
       <Sidebar />
 
       <FiChevronRight
-        className="text-white bg-[#9B59B6] rounded-full absolute top-[2.75rem] left-[5rem]  md:left-90 -translate-y-1/2 
+        className="text-white bg-[#9B59B6] rounded-full absolute top-[44px] left-[80px]  
+                  md:left-[90px] lg:left-[100px] -translate-y-1/2 
                   flex items-center justify-center 
                   w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] md:w-[28px] md:h-[28px] lg:w-[32px] lg:h-[32px]"
       />
+
       <main className="flex-1 flex flex-col px-4 py-6 sm:px-6 md:px-8 bg-[#F4F4F4] rounded-tl-[40px] md:rounded-tl-[40px] overflow-auto mt-5">
         <div className="mb-6 sm:mb-8">
         <HeaderText

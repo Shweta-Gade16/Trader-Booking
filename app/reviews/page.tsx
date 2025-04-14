@@ -24,7 +24,7 @@ import HeaderText from '../components/HeaderText';
 
       <FiChevronRight
         className="text-white bg-[#9B59B6] rounded-full absolute top-[44px] left-[80px]  
-                  md:left-[90px] lg:left-[100px] -translate-y-1/2 
+                  md:left-[90px] lg:left-[263px] -translate-y-1/2 
                   flex items-center justify-center 
                   w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] md:w-[28px] md:h-[28px] lg:w-[32px] lg:h-[32px]"
       />

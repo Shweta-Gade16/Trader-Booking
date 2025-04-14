@@ -39,7 +39,7 @@ export const ReviewList: React.FC<ReviewListProps> = ({ reviews }) => {
         <table className="min-w-[720px] w-full table-auto text-[12px]">
           <thead className="bg-[#F4F4F4] text-[#324A6D] font-poppins text-[12px] font-normal">
             <tr>
-              <th className="px-6 py-4 text-left">Mentor Name</th>
+              <th className="px-5 py-4 text-left">Mentor Name</th>
               <th className="px-6 py-4 text-left">Title</th>
               <th className="px-6 py-4 text-left">Description</th>
               <th className="px-6 py-4 text-left">
@@ -48,7 +48,7 @@ export const ReviewList: React.FC<ReviewListProps> = ({ reviews }) => {
                 </div>
               </th>
               <th className="px-6 py-4 text-left">Status</th>
-              <th className="px-6 py-4 text-center">Actions</th>
+              <th className="px-4 py-4 text-center"></th>
             </tr>
           </thead>
           <tbody>
@@ -57,7 +57,7 @@ export const ReviewList: React.FC<ReviewListProps> = ({ reviews }) => {
                 key={item.id}
                 className="border-t border-[#324A6D1A] hover:bg-[#f9f9f9] transition"
               >
-                <td className="px-6 py-4">
+                <td className="px-4 py-4">
                   <div className="flex items-center gap-3">
                     <div className="relative w-8 h-8 rounded-full overflow-hidden border border-[#324A6D80]">
                       <Image

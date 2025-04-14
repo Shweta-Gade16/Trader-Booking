@@ -1,10 +1,11 @@
 'use client';
 
-import { LuCheck } from 'react-icons/lu'; 
+import { LuCheck } from 'react-icons/lu';
 
-interface StatusBadgeProps {
-  status: 'pending' | 'completed' | 'cancelled' | 'scheduled' | 'paid';
+export interface StatusBadgeProps {
+  status: 'pending' | 'completed' | 'cancelled' | 'scheduled' | 'paid' | 'published'; 
 }
+
 const badgeStyles: Record<StatusBadgeProps['status'], { bg: string; border: string; dot?: string; text: string }> = {
   pending: {
     bg: '#F9FAFB',
@@ -35,12 +36,19 @@ const badgeStyles: Record<StatusBadgeProps['status'], { bg: string; border: stri
     border: '#ABEFC6',
     text: '#17B26A',
   },
+  published: {
+    bg: '#ECFDF3',
+    border: '#ABEFC6',
+    dot: '#17B26A',
+    text: '#17B26A',
+  },
 };
 
 export default function StatusBadge({ status }: StatusBadgeProps) {
   const { bg, border, dot, text } = badgeStyles[status];
+
   return (
-    <div
+    <span
       className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 h-[24px] sm:h-[28px] rounded-full text-[14px] font-semibold"
       style={{
         backgroundColor: bg,
@@ -58,6 +66,7 @@ export default function StatusBadge({ status }: StatusBadgeProps) {
       <span className="font-poppins capitalize" style={{ color: text }}>
         {status}
       </span>
-    </div>
+    </span>
   );
 }
+

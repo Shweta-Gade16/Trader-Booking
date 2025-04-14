@@ -28,7 +28,6 @@ export default function PaginationFooter({
       <p className="text-sm sm:text-[14px] font-medium text-[#324A6D] text-center sm:text-left">
         Page {currentPage} of {totalPages}
       </p>
-
       <div className="flex flex-wrap justify-center gap-2">
         <button
           onClick={handlePrevious}

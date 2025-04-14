@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { FiBell, FiLogOut } from 'react-icons/fi';
 import { LuMessageSquareText } from 'react-icons/lu';
 
@@ -13,58 +14,44 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  {
-    label: 'Dashboard',
-    icon: '/bar-chart-square-02.png',
-    hoverIcon: '/Dashboard_p.png',
-    href: '/dashboard',
-  },
-  {
-    label: 'Profile',
-    icon: '/user-01.png',
-    hoverIcon: '/user-01_p.png',
-    href: '/profile',
-  },
-  {
-    label: 'Bookings',
-    icon: '/Booking.png',
-    hoverIcon: '/Booking_p.png',
-    href: '/booking',
-  },
-  {
-    label: 'Reviews',
-    icon: '/star-01.png',
-    hoverIcon: '/star-01_p.png',
-    href: '/reviews',
-  },
+  { label: 'Dashboard', icon: '/bar-chart-square-02.png', hoverIcon: '/Dashboard_p.png', href: '/dashboard' },
+  { label: 'Profile', icon: '/user-01.png', hoverIcon: '/user-01_p.png', href: '/profile' },
+  { label: 'Bookings', icon: '/Booking.png', hoverIcon: '/Booking_p.png', href: '/booking' },
+  { label: 'Reviews', icon: '/star-01.png', hoverIcon: '/star-01_p.png', href: '/reviews' },
 ];
 
-const SidebarItem = ({ label, icon, hoverIcon, href }: NavItem) => (
-  <Link
-    href={href}
-    className="w-full h-[40px] flex items-center gap-2 rounded px-2 group hover:bg-[#9B59B61A] transition cursor-pointer justify-center md:justify-start"
-  >
-    <div className="w-[40px] h-[40px] p-2 rounded flex items-center justify-center relative">
-      <Image
-        src={icon}
-        alt={`${label} icon`}
-        width={24}
-        height={24}
-        className="absolute group-hover:opacity-0 transition-opacity"
-      />
-      <Image
-        src={hoverIcon}
-        alt={`${label} hover icon`}
-        width={24}
-        height={24}
-        className="opacity-0 group-hover:opacity-100 transition-opacity"
-      />
-    </div>
-    <span className="hidden md:block text-[14px] font-poppins text-[#324A6D] group-hover:text-[#9B59B6]">
-      {label}
-    </span>
-  </Link>
-);
+const SidebarItem = ({ label, icon, hoverIcon, href }: NavItem) => {
+  const pathname = usePathname();
+
+  return (
+    <Link
+      href={href}
+      aria-label={label}
+      className={`w-full h-[40px] flex items-center gap-2 px-2 rounded group 
+        ${pathname === href ? 'bg-[#9B59B61A]' : 'hover:bg-[#9B59B61A]'} transition cursor-pointer justify-center md:justify-start`}
+    >
+      <div className="w-[40px] h-[40px] p-2 rounded flex items-center justify-center relative">
+        <Image
+          src={icon}
+          alt={`${label} icon`}
+          width={24}
+          height={24}
+          className="absolute group-hover:opacity-0 transition-opacity"
+        />
+        <Image
+          src={hoverIcon}
+          alt={`${label} hover icon`}
+          width={24}
+          height={24}
+          className="opacity-0 group-hover:opacity-100 transition-opacity"
+        />
+      </div>
+      <span className="hidden md:block text-[14px] font-poppins text-[#324A6D] group-hover:text-[#9B59B6]">
+        {label}
+      </span>
+    </Link>
+  );
+};
 
 const Sidebar = () => {
   return (
@@ -106,6 +93,30 @@ const Sidebar = () => {
           </span>
         </Link>
 
+        <Link
+          href="/help"
+          className="flex items-center gap-2 group hover:bg-[#9B59B61A] p-2 rounded justify-center md:justify-start"
+        >
+          <div className=" flex items-center relative">
+            <Image
+              src="/Help.png" 
+              alt="Help Icon"
+              width={24}
+              height={24}
+              className="absolute group-hover:opacity-0 transition-opacity"
+            />
+            <Image
+              src="/Help_p.png" 
+              alt="Help Hover Icon"
+              width={24}
+              height={24}
+              className="opacity-0 group-hover:opacity-100 transition-opacity"
+            />
+          </div>
+          <span className="hidden md:block text-[14px] text-[#324A6D] group-hover:text-[#9B59B6] font-poppins">
+            Help
+          </span>
+        </Link>
         <Link
           href="/logout"
           className="flex items-center gap-2 group hover:bg-[#9B59B61A] p-2 rounded justify-center md:justify-start"
